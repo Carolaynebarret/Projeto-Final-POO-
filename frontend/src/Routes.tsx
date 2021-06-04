@@ -1,4 +1,4 @@
-import Formulario from 'pages/Formulario';
+import Formulario from 'pages/Forms';
 import Home from 'pages/Home';
 import Dashboard from   'pages/dashboard';
 
