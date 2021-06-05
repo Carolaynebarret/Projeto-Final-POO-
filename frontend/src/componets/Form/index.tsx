@@ -76,7 +76,7 @@ const Form = () => {
 
                 <div className="row g-3">
 
-                    <label className="">Exeperiência:</label>
+                    <label className="">Experiência:</label>
                     <div className="form-floating">
                         <textarea className="form-control" placeholder="Deixe um comentário aqui" aria-label="floatingTextarea2" ></textarea>
                         <label>Comentários</label>
