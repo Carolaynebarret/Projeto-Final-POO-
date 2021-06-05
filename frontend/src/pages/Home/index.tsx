@@ -6,7 +6,7 @@ const Home = () => {
     return (
       <>
       <NavBar />
-      <body>
+      
       <div className="container" >
         <h2 className = "bs-font-sans-serif " >  Página Inicial  </h2>
 
@@ -14,7 +14,9 @@ const Home = () => {
           Acessar Formulario
         </Link>
       </div>
-      </body>
+      <body>
+        </body>
+    
        <Footer />
     </>
       

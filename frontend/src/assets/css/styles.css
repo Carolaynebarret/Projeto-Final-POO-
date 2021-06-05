@@ -6,7 +6,6 @@
 html, body {
     height: 100%;
     font-family: "Ubuntu", sans-serif;
-  
 }
 
 #root {
@@ -24,7 +23,6 @@ html, body {
     text-align: center;
     background-color: whitesmoke;
     position: relative;
-    
 }
 
 .bg-primary {
@@ -33,4 +31,9 @@ html, body {
 
 .text-primary {
     color: var(--color-primary) !important;
+}
+
+.App {
+    color: var(--color-primary) !important;
+    position: relative;
 }
