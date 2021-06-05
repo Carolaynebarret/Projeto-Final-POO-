@@ -7,11 +7,11 @@ const Form = () => {
             <div className="row g-3">
                 <label >Nome</label>
                 <div className="col">
-                    <input type="text" className="form-control" placeholder="First name" aria-label="First name" />
+                    <input type="text" className="form-control" placeholder="Nome" aria-label="Name" />
                 </div>
             </div>
 
-            <div>
+            <div className="row g-3">
                 <label>Idade:</label>
                 <div className="col">
                     <input type="number" className="form-control" placeholder=" Idade" aria-label="Idade" />
@@ -28,8 +28,8 @@ const Form = () => {
                     </select>
                 </div>
             </div>
-
-            <div>
+  
+            <div className="row g-3">
                 <label>Telefone:</label>
                 <div className="col">
                     <input type="number" className="form-control" placeholder=" Telefone" aria-label="Telefone" />
@@ -40,35 +40,39 @@ const Form = () => {
                 <label >Endereço</label>
 
                 <div className="col-sm-7">
-                    <input type="text" className="form-control" placeholder="City" aria-label="City" />
+                    <input type="text" className="form-control" placeholder="Cidade" aria-label="City" />
                 </div>
                 <div className="col-sm">
-                    <input type="text" className="form-control" placeholder="State" aria-label="State" />
+                    <input type="text" className="form-control" placeholder="
+                        Estado" aria-label="State" />
                 </div>
                 <div className="col-sm">
-                    <input type="text" className="form-control" placeholder="Zip" aria-label="Zip" />
+                    <input type="text" className="form-control" placeholder="CEP" aria-label="Zip" />
                 </div>
             </div>
 
-            <div>
+            
+            <div className="row g-3">
                 <label>Formação:</label>
                 <div className="col">
                     <input type="text" className="form-control" placeholder=" Ex. Computação" aria-label="Ex. Computação" />
                 </div>
             </div>
 
-            <div>
+            
+            <div className="row g-3">
                 <label> Qualificação:</label>
                 <div className="col">
-                    <input type="text" className="form-control" placeholder=" Qualificação" aria-label="Ex. Computação" />
+                    <input type="text" className="form-control" placeholder=" Qualificação" aria-label="" />
                 </div>
             </div>
-            <div>
+            
+            <div className="row g-3">
 
-                <label>Exeperiência</label>
+                <label className="">Exeperiência</label>
                 <div className="form-floating">
-                    <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" ></textarea>
-                    <label >Comments</label>
+                    <textarea className="form-control" placeholder ="Deixe um comentário aqui" aria-label="floatingTextarea2" ></textarea>
+                    <label>Comentários</label>
                 </div>
             </div>
 
@@ -84,10 +88,23 @@ const Form = () => {
                 </div>
             </div>
 
+          <div className="col-12">
+                <div className="form-check">
+                    <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                    <label className="form-check-label" >
+                        Aceite os termos e condições
+      </label>
+                    <div className="invalid-feedback">
+                        You must agree before submitting.
+      </div>
 
-            <Link className="btn btn-primary btn-lg" to="/dashboard">
-                Enviar Formulario
-            </Link>
+                </div>
+            </div>
+
+            <div className="col-12">
+                <button className="btn btn-primary " type="submit">Enviar Formulario</button>
+            </div>
+
 
 
         </form>

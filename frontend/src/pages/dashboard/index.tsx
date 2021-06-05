@@ -10,7 +10,7 @@ const Dashboard = () => {
         <div className="container" >
           <h2 className="bs-font-sans-serif " >  Dados  </h2>
   
-          <Link className="btn btn-primary btn-lg" to="/">
+          <Link className="btn btn-primary " to="/">
             Página Inicial
           </Link>
         </div>

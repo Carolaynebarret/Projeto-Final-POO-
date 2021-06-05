@@ -10,7 +10,7 @@ const Home = () => {
       <div className="container" >
         <h2 className = "bs-font-sans-serif " >  Página Inicial  </h2>
 
-        <Link className= "btn btn-primary btn-lg"to="/Formulario">
+        <Link className= "btn btn-primary "to="/Formulario">
           Acessar Formulario
         </Link>
       </div>
