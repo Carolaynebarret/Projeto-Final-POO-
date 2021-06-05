@@ -33,34 +33,28 @@ html, body {
     color: var(--color-primary) !important;
 }
 
-<<<<<<< HEAD
 
-    #menu ul {
-        padding:0px;
-        margin:0px;
-        background-color:#EDEDED;
-        list-style:none;
-    }
-
-    #menu ul li { display: inline; }
-    #menu ul li a {
-        padding: 2px 10px;
-        display: inline-block;
     
-        /* visual do link */
-        background-color:#EDEDED;
-        color: #333;
-        text-decoration: none;
-        border-bottom:3px solid #EDEDED;
-    }
-    #menu ul li a:hover {
-        background-color:#D6D6D6;
-        color: #6D6D6D;
-        border-bottom:3px solid #176477;
-    }    
-=======
-.App {
-    color: var(--color-primary) !important;
-    position: relative;
+#menu ul {
+    padding:0px;
+    margin:0px;
+    background-color:#EDEDED;
+    list-style:none;
 }
->>>>>>> 7d8873d1082599c77426299807431357b8bfb430
+
+#menu ul li { display: inline; }
+#menu ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+
+    /* visual do link */
+    background-color:#EDEDED;
+    color: #333;
+    text-decoration: none;
+    border-bottom:3px solid #EDEDED;
+}
+#menu ul li a:hover {
+    background-color:#D6D6D6;
+    color: #6D6D6D;
+    border-bottom:3px solid #176477;
+}    
