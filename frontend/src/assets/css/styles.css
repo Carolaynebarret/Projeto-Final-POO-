@@ -6,7 +6,6 @@
 html, body {
     height: 100%;
     font-family: "Ubuntu", sans-serif;
-  
 }
 
 #root {
@@ -24,7 +23,6 @@ html, body {
     text-align: center;
     background-color: whitesmoke;
     position: relative;
-    
 }
 
 .bg-primary {
@@ -35,6 +33,7 @@ html, body {
     color: var(--color-primary) !important;
 }
 
+<<<<<<< HEAD
 
     #menu ul {
         padding:0px;
@@ -59,3 +58,9 @@ html, body {
         color: #6D6D6D;
         border-bottom:3px solid #176477;
     }    
+=======
+.App {
+    color: var(--color-primary) !important;
+    position: relative;
+}
+>>>>>>> 7d8873d1082599c77426299807431357b8bfb430
