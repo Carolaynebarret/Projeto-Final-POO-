@@ -1,0 +1,1 @@
+alter table curriculo rename column telefone to fone; 
