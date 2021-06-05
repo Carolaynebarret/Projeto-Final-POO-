@@ -1,0 +1,15 @@
+#package com.uern.poo;
+
+public class Informacao {
+    private String nome;
+    private String sobrenome;
+    private int data[];
+    private String sexo;
+    Informacao(String nome, String sobrenome, int data[],String sexo){
+    this.nome=nome;
+    this.sobrenome=sobrenome;
+    this.data=data;
+    this.sexo=sexo;
+    }
+    //metodos get e sets
+}
