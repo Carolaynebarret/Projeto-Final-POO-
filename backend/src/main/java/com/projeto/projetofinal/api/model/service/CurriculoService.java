@@ -32,8 +32,6 @@ private CurriculoRepositorio curriculoRepository;
 		
 	}
 
-
-
 	public void excluir(Long curriculoId) {
 		
 		curriculoRepository.deleteById(curriculoId);
