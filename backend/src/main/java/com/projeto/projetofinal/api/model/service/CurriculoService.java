@@ -13,30 +13,26 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @Service
 public class CurriculoService {
-	
-	
-private CurriculoRepositorio curriculoRepository;	
-	
-	
-	
+
+	private CurriculoRepositorio curriculoRepository;
+
 	@Transactional
 	public Curriculo salvar(Curriculo curriculo) {
 		boolean emailEmUso = curriculoRepository.findByEmail(curriculo.getEmail()).stream()
 				.anyMatch(curriculoExistente -> !curriculoExistente.equals(curriculo));
-		
-		if(emailEmUso ) {
+
+		if (emailEmUso) {
 			throw new NegocioException("Já existe um curriculo cadastrado com este e-mail.");
 		}
-		
+
 		return curriculoRepository.save(curriculo);
-		
+
 	}
 
 	public void excluir(Long curriculoId) {
-		
+
 		curriculoRepository.deleteById(curriculoId);
-		
+
 	}
-	
 
 }

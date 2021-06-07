@@ -13,7 +13,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Problema {
-	
 
 	private Integer status;
 	private String titulo;

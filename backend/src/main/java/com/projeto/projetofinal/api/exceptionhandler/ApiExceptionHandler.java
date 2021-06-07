@@ -23,54 +23,52 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @ControllerAdvice
-public class ApiExceptionHandler  extends ResponseEntityExceptionHandler{
+public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
-private MessageSource messageSource;
-	
+	private MessageSource messageSource;
+
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		// TODO Auto-generated method stub
 		List<Problema.Campo> campos = new ArrayList<>();
-		
-		for(ObjectError error : ex.getBindingResult().getAllErrors()) {
+
+		for (ObjectError error : ex.getBindingResult().getAllErrors()) {
 			String nome = ((FieldError) error).getField();
 			String mensagem = messageSource.getMessage(error, LocaleContextHolder.getLocale());
-			
-			campos.add(new Problema.Campo( nome, mensagem));
+
+			campos.add(new Problema.Campo(nome, mensagem));
 		}
-		
+
 		Problema problema = new Problema();
 		problema.setStatus(status.value());
 		problema.setTitulo(" Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente");
 		problema.setCampos(campos);
-		
-		return handleExceptionInternal(ex, problema, headers ,status, request);
+
+		return handleExceptionInternal(ex, problema, headers, status, request);
 
 	}
-	
-	@ExceptionHandler(EntidadeNaoEncontradaException.class) 
-	public ResponseEntity<Object> handleEntidadeNaoEncontrada(EntidadeNaoEncontradaException ex, WebRequest request){
+
+	@ExceptionHandler(EntidadeNaoEncontradaException.class)
+	public ResponseEntity<Object> handleEntidadeNaoEncontrada(EntidadeNaoEncontradaException ex, WebRequest request) {
 		HttpStatus status = HttpStatus.NOT_FOUND;
-		
+
 		Problema problema = new Problema();
 		problema.setStatus(status.value());
 		problema.setTitulo(ex.getMessage());
-		
-		return handleExceptionInternal(ex, problema, new HttpHeaders() ,status, request);
+
+		return handleExceptionInternal(ex, problema, new HttpHeaders(), status, request);
 	}
 
-	
-	@ExceptionHandler(NegocioException.class) 
-	public ResponseEntity<Object> handleNegocio(NegocioException ex, WebRequest request){
+	@ExceptionHandler(NegocioException.class)
+	public ResponseEntity<Object> handleNegocio(NegocioException ex, WebRequest request) {
 		HttpStatus status = HttpStatus.BAD_REQUEST;
-		
+
 		Problema problema = new Problema();
 		problema.setStatus(status.value());
 		problema.setTitulo(ex.getMessage());
-		
-		return handleExceptionInternal(ex, problema, new HttpHeaders() ,status, request);
+
+		return handleExceptionInternal(ex, problema, new HttpHeaders(), status, request);
 	}
 
-	
 }
