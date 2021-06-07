@@ -12,7 +12,6 @@ const Dashboard = () => {
         
         <div className="container" >
           <h2 className="bs-font-sans-serif " >  Dados  </h2>
-  
          
         <div className="row px-3">
           <div className="col-sm-6">

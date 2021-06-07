@@ -20,15 +20,23 @@ private CurriculoRepositorio curriculoRepository;
 	
 	
 	@Transactional
-	public Curriculo salvar(Curriculo cliente) {
-		boolean emailEmUso = curriculoRepository.findByEmail(cliente.getEmail()).stream()
-				.anyMatch(clienteExistente -> !clienteExistente.equals(cliente));
+	public Curriculo salvar(Curriculo curriculo) {
+		boolean emailEmUso = curriculoRepository.findByEmail(curriculo.getEmail()).stream()
+				.anyMatch(curriculoExistente -> !curriculoExistente.equals(curriculo));
 		
 		if(emailEmUso ) {
-			throw new NegocioException("Já existe um cliente cadastrado com este e-mail.");
+			throw new NegocioException("Já existe um curriculo cadastrado com este e-mail.");
 		}
 		
-		return curriculoRepository.save(cliente);
+		return curriculoRepository.save(curriculo);
+		
+	}
+
+
+
+	public void excluir(Long curriculoId) {
+		
+		curriculoRepository.deleteById(curriculoId);
 		
 	}
 	
