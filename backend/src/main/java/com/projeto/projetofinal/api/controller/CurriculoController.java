@@ -26,8 +26,8 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/curriculo")
 public class CurriculoController {
-	
-	private CurriculoRepositorio curriculoRepository;	
+
+	private CurriculoRepositorio curriculoRepository;
 
 	private CurriculoService curriculoService;
 
@@ -37,26 +37,28 @@ public class CurriculoController {
 
 	}
 
-	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Curriculo adicionar(@Valid @RequestBody Curriculo curriculo) {
 		return curriculoService.salvar(curriculo);
 
 	}
+
 	@DeleteMapping("/{curriculoId}")
-	public ResponseEntity<Void> remover (@PathVariable Long curriculoId){
+	public ResponseEntity<Void> remover(@PathVariable Long curriculoId) {
 		if (!curriculoRepository.existsById(curriculoId)) {
 			return ResponseEntity.notFound().build();
 		}
-		
+
 		curriculoService.excluir(curriculoId);
-		
+
 		return ResponseEntity.noContent().build();
-		
+
 	}
+
 	@PutMapping("/{curriculoId}")
-	public ResponseEntity<Curriculo> atualizar(@PathVariable Long curriculoId, @Valid @RequestBody Curriculo curriculo) {
+	public ResponseEntity<Curriculo> atualizar(@PathVariable Long curriculoId,
+			@Valid @RequestBody Curriculo curriculo) {
 
 		if (!curriculoRepository.existsById(curriculoId)) {
 			return ResponseEntity.notFound().build();
@@ -66,6 +68,13 @@ public class CurriculoController {
 		curriculo = curriculoService.salvar(curriculo);
 
 		return ResponseEntity.ok(curriculo);
+	}
+
+	@GetMapping("/{curriculoId}")
+	public ResponseEntity<Curriculo> buscar(@PathVariable Long curriculoId) {
+		return curriculoRepository.findById(curriculoId).map(ResponseEntity::ok)
+				.orElse(ResponseEntity.notFound().build());
+
 	}
 
 }
