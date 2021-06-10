@@ -3,6 +3,7 @@ create table curriculo (
     nome varchar(60) not null,
     email varchar(255) not null,
     fone varchar(20)not null,
+    sexo varchar(10)not null,
     experiencia varchar(255) not null,
     formacao varchar(255) not null,
     cargo_desejado varchar(255) not null,

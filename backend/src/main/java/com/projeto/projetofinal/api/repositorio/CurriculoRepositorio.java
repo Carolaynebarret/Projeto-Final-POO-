@@ -12,8 +12,6 @@ import com.projeto.projetofinal.domain.model.Curriculo;
 public interface CurriculoRepositorio extends JpaRepository<Curriculo, Long> {
 
 	List<Curriculo> findByNome(String nome);
-
 	List<Curriculo> findByNomeContaining(String nome);
-
 	Optional<Curriculo> findByEmail(String email);
 }

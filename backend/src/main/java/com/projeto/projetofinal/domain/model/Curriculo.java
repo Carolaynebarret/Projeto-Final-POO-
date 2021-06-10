@@ -37,6 +37,10 @@ public class Curriculo {
 	@Column(name = "fone")
 	private String telefone;
 	
+	@NotBlank
+	@Size(max = 10)
+	private String sexo;
+	
 	
 	@NotBlank
 	@Size(max = 255)
@@ -63,6 +67,8 @@ public class Curriculo {
 	@NotBlank
 	@Size(max = 255)
     private String especial;
+	
+
 	
 
 }
