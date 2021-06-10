@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="card footer">
+        <footer className="card footer fixed-bottom">
         <div className="card-title">
             <p className="tcard-text">App desenvolvido por
              <div>
